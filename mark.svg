@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Trailline mark: two peaks with a lime trail line running down from the taller one. -->
+  <rect width="1024" height="1024" fill="#C6F36B"/>
+  <path d="M160 760 L432 300 L516 440 L622 352 L846 760 Z" fill="#0F160F"/>
+  <path d="M446 340 C 482 392, 508 440, 478 512 C 448 584, 418 650, 452 760"
+        fill="none" stroke="#C6F36B" stroke-width="38" stroke-linecap="round"/>
+</svg>

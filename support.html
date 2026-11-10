@@ -23,7 +23,26 @@
 
   <main class="doc">
     <h1>Support</h1>
-    <p>Questions, bugs or feature ideas: <a href="https://github.com/ezraraquel/trailline/issues">open an issue on GitHub</a>.</p>
+    <p>Questions, bugs, feature ideas or account help: send us a message and we'll reply by email, usually within a day.</p>
+
+    <form class="support-form" id="support-form" novalidate>
+      <div class="field-row">
+        <label>Your name <span class="opt">(optional)</span><input name="name" autocomplete="name" maxlength="80"></label>
+        <label>Email <span class="req">*</span><input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200"></label>
+      </div>
+      <label>Topic
+        <select name="topic">
+          <option>Question</option><option>Bug</option><option>Feature idea</option>
+          <option>Account or data</option><option>Report a user</option><option>Other</option>
+        </select>
+      </label>
+      <label>Message <span class="req">*</span><textarea name="message" rows="6" required maxlength="5000" placeholder="What happened, and where in the app?"></textarea></label>
+      <label>iPhone model and iOS version <span class="opt">(optional, helps with bugs)</span><input name="device" maxlength="120" placeholder="e.g. iPhone 16 Pro, iOS 27"></label>
+      <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <button class="btn" type="submit">Send message <span class="arrow">→</span></button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="meta">Prefer email? Write to <a href="mailto:support@trytrailline.app">support@trytrailline.app</a>. We only use what you send to answer you. See the <a href="privacy.html">privacy policy</a>.</p>
+    </form>
     <p><b>If someone is hurt or in danger on the mountain, contact ski patrol or call 911.</b></p>
 
     <h2>Common questions</h2>
@@ -44,5 +63,6 @@
     <div>© 2026 Trailline</div>
   </div>
 </footer>
+<script src="support.js" defer></script>
 </body>
 </html>

@@ -55,6 +55,33 @@
     show(tabs[idx].dataset.tab);
   }, 5000);
 
+  // Demo video: plays (muted) when on screen, chapters jump to each part, caption follows along.
+  const video = document.getElementById('demo-video');
+  if (video) {
+    const T = [0, 6, 12, 18];
+    const CAPTIONS = ['Tap any run for its card', 'Your saved line, only you can see it', 'Your crew, and where they are', 'Tap a chair, meet at the bottom'];
+    const chapters = [...document.querySelectorAll('.chapters button')];
+    const caption = document.querySelector('.demo-phone .caption');
+    const playBtn = document.querySelector('.demo-phone .play');
+    const mark = () => {
+      let i = 0;
+      T.forEach((t, k) => { if (video.currentTime >= t - 0.05) i = k; });
+      chapters.forEach((b, k) => b.classList.toggle('on', k === i));
+      if (caption) caption.textContent = CAPTIONS[i];
+    };
+    const play = () => { video.play().then(() => { playBtn.hidden = true; }).catch(() => {}); };
+    video.addEventListener('timeupdate', mark);
+    video.addEventListener('pause', () => { playBtn.hidden = false; });
+    video.addEventListener('play', () => { playBtn.hidden = true; });
+    playBtn?.addEventListener('click', play);
+    video.addEventListener('click', () => (video.paused ? play() : video.pause()));
+    chapters.forEach((b, k) => b.addEventListener('click', () => { video.currentTime = T[k]; mark(); play(); }));
+    mark();
+    if (!still) {
+      new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? play() : video.pause())), { threshold: 0.4 }).observe(video);
+    }
+  }
+
   // Hero phone tilts toward the pointer.
   const phone = document.querySelector('.tilt');
   if (phone && !still && matchMedia('(pointer: fine)').matches) {

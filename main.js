@@ -87,10 +87,13 @@
       chapters.forEach((b, k) => b.classList.toggle('on', k === i));
       if (caption) caption.textContent = CAPTIONS[i];
     };
-    const play = () => { video.play().then(() => { playBtn.hidden = true; }).catch(() => {}); };
+    // iOS needs muted/inline set as properties too, and may refuse autoplay (Low Power Mode):
+    // the play button only hides once frames are actually moving.
+    video.muted = true; video.defaultMuted = true; video.playsInline = true;
+    const play = () => { const p = video.play(); if (p) p.catch(() => { playBtn.hidden = false; }); };
     video.addEventListener('timeupdate', mark);
-    video.addEventListener('pause', () => { playBtn.hidden = false; });
-    video.addEventListener('play', () => { playBtn.hidden = true; });
+    video.addEventListener('playing', () => { playBtn.hidden = true; });
+    ['pause', 'waiting', 'stalled', 'error'].forEach((ev) => video.addEventListener(ev, () => { if (video.paused || ev !== 'waiting') playBtn.hidden = false; }));
     playBtn?.addEventListener('click', play);
     video.addEventListener('click', () => (video.paused ? play() : video.pause()));
     chapters.forEach((b, k) => b.addEventListener('click', () => { video.currentTime = T[k]; mark(); play(); }));

@@ -223,7 +223,7 @@ footer a:hover { color: var(--text); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .trail { stroke-dashoffset: 0; }
   .rider { opacity: 1; offset-distance: 40%; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal, .js .reveal { opacity: 1; transform: none; }
   #snow { display: none; }
 }
 
@@ -337,3 +337,9 @@ footer a:hover { color: var(--text); }
   .support-form .field-row { grid-template-columns: 1fr; }
   .support-form .btn { justify-self: stretch; justify-content: center; }
 }
+
+/* Gear: switch between the wall, list and saved-stance views. */
+.views { display: inline-flex; gap: 4px; padding: 4px; background: var(--card); border: 1px solid var(--border); border-radius: 999px; margin: 6px 0 10px; }
+.views button { font: inherit; font-weight: 800; font-size: 15px; color: var(--text); background: none; border: 0; border-radius: 999px; padding: 10px 16px; min-height: 44px; cursor: pointer; transition: background-color .25s ease, color .25s ease; }
+.views button[aria-pressed="true"] { background: var(--lime); color: var(--on-lime); }
+.view-note { color: var(--muted); font-size: 16px; margin: 0; min-height: 1.6em; }

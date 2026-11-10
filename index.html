@@ -129,7 +129,9 @@
         <img class="shot" data-tab="runs" src="img/runs.webp" alt="Runs list" width="664" height="1430" loading="lazy">
         <img class="shot" data-tab="crew" src="img/crew.webp" alt="Crew screen" width="664" height="1430" loading="lazy">
         <img class="shot" data-tab="snow" src="img/weather.webp" alt="Weather bubble" width="664" height="1430" loading="lazy">
-        <img class="shot" data-tab="gear" src="img/gear.webp" alt="Gear screen" width="664" height="1430" loading="lazy">
+        <img class="shot" data-tab="gear" data-view="wall" src="img/gear-wall.webp" alt="Gear wall: boards hanging, boots and bindings on shelves" width="664" height="1430" loading="lazy">
+        <img class="shot" data-tab="gear" data-view="list" src="img/gear-list.webp" alt="Gear locker as a list" width="664" height="1430" loading="lazy">
+        <img class="shot" data-tab="gear" data-view="stance" src="img/gear-stance.webp" alt="A board's saved stances and how each one rode" width="664" height="1430" loading="lazy">
       </div>
     </div>
     <div>
@@ -164,6 +166,12 @@
         <div class="panel" data-tab="gear">
           <h3>Track your gear</h3>
           <p>Log the board, boots and bindings you rode, your stance angles and how it felt. Find the nearest tune shop when your edges need help.</p>
+          <div class="views" role="group" aria-label="Gear views">
+            <button type="button" data-view="wall" aria-pressed="true">🏂 Wall</button>
+            <button type="button" data-view="list" aria-pressed="false">☰ List</button>
+            <button type="button" data-view="stance" aria-pressed="false">📐 Stances</button>
+          </div>
+          <p class="view-note" aria-live="polite">Your boards hang on a wall, with boots and bindings on shelves.</p>
         </div>
       </div>
     </div>

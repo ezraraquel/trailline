@@ -31,10 +31,28 @@
 
   // Feature tour: tabs swap the phone screen with a soft crossfade.
   const tabs = [...document.querySelectorAll('.tabs button')];
+  let gearView = 'wall';
   const show = (name) => {
     tabs.forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === name)));
-    document.querySelectorAll('.shot, .panel').forEach((el) => el.classList.toggle('active', el.dataset.tab === name));
+    document.querySelectorAll('.panel').forEach((el) => el.classList.toggle('active', el.dataset.tab === name));
+    document.querySelectorAll('.shot').forEach((el) =>
+      el.classList.toggle('active', el.dataset.tab === name && (!el.dataset.view || el.dataset.view === gearView)));
   };
+
+  // Gear: Wall / List / Stances switch swaps the phone screen.
+  const NOTES = {
+    wall: 'Your boards hang on a wall, with boots and bindings on shelves.',
+    list: 'Or see everything as a list, with how many days each piece has ridden.',
+    stance: 'Every stance a board has had, with your angles, width and how it rode.',
+  };
+  document.querySelectorAll('.views button').forEach((b) => b.addEventListener('click', () => {
+    gearView = b.dataset.view;
+    document.querySelectorAll('.views button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    const note = document.querySelector('.view-note');
+    if (note) note.textContent = NOTES[gearView];
+    autoplay = false;
+    show('gear');
+  }));
   tabs.forEach((b, i) => {
     b.addEventListener('click', () => { show(b.dataset.tab); autoplay = false; });
     b.addEventListener('keydown', (e) => {

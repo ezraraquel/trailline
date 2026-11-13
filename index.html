@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,700..900&display=swap">
-<link rel="stylesheet" href="styles.css?v=202611131230">
+<link rel="stylesheet" href="styles.css?v=202611131249">
 </head>
 <body class="home">
 <script>document.documentElement.classList.add("js")</script>
@@ -91,7 +91,7 @@
 <section id="features">
   <div class="wrap">
     <h2 class="display reveal">Built for the <span>chairlift</span>,<br>not the desk.</h2>
-    <p class="section-lede reveal">Big buttons for gloves, auto-pause when you stop, and no account to set up before first chair.</p>
+    <p class="section-lede reveal">Big buttons for gloves, auto-pause when you stop, no account to set up before first chair, and a quick tour the first time you open it.</p>
     <div class="stats">
       <div class="stat reveal"><b data-count="30">0</b><span>resorts at launch</span></div>
       <div class="stat reveal"><b data-count="0" data-static>0</b><span>ads, ever</span></div>
@@ -116,7 +116,7 @@
     </div>
     <div class="demo-phone reveal">
       <div class="bezel">
-        <video id="demo-video" src="img/demo.mp4?v=202611131230" poster="img/demo-poster.webp" muted loop playsinline preload="metadata"
+        <video id="demo-video" src="img/demo.mp4?v=202611131249" poster="img/demo-poster.webp" muted loop playsinline preload="metadata"
           aria-label="Trailline demo: tapping a run, saving a line, finding friends and meeting at a lift"></video>
         <button class="play" type="button" aria-label="Play demo">▶</button>
       </div>
@@ -132,6 +132,7 @@
         <img class="shot active" data-tab="ride" src="img/map.webp" alt="Map with your runs" width="664" height="1430">
         <img class="shot" data-tab="runs" src="img/runs.webp" alt="Runs list" width="664" height="1430" loading="lazy">
         <img class="shot" data-tab="crew" src="img/crew.webp" alt="Crew screen" width="664" height="1430" loading="lazy">
+        <img class="shot" data-tab="rides" src="img/rides.webp" alt="Offer seats home: pick-up spot, destination town, time and spare seats" width="664" height="1415" loading="lazy">
         <img class="shot" data-tab="snow" src="img/weather.webp" alt="Weather bubble" width="664" height="1430" loading="lazy">
         <img class="shot" data-tab="gear" data-view="wall" src="img/gear-wall.webp" alt="Gear wall: boards hanging, boots and bindings on shelves" width="664" height="1430" loading="lazy">
         <img class="shot" data-tab="gear" data-view="list" src="img/gear-list.webp" alt="Gear locker as a list" width="664" height="1430" loading="lazy">
@@ -144,6 +145,7 @@
         <button role="tab" aria-selected="true" data-tab="ride">Ride</button>
         <button role="tab" aria-selected="false" data-tab="runs">Runs</button>
         <button role="tab" aria-selected="false" data-tab="crew">Crew</button>
+        <button role="tab" aria-selected="false" data-tab="rides">Rides</button>
         <button role="tab" aria-selected="false" data-tab="snow">Snow</button>
         <button role="tab" aria-selected="false" data-tab="gear">Gear</button>
       </div>
@@ -162,6 +164,11 @@
           <h3>Ride together</h3>
           <p>Add friends with a short code you can shout across a lift line, or a QR. See who's out, where they are and which lift they're heading to. Then chat one-on-one or in a group with your whole crew.</p>
           <ul><li>Group chats for your crew, with quick replies that work with gloves on</li><li>Send your spot: friends tap it to see exactly where you are on the map</li><li>A notification when your crew messages you</li><li>No email or phone number needed</li><li>Trailline Family for kids in ski school</li></ul>
+        </div>
+        <div class="panel" data-tab="rides">
+          <h3>Spare seat? Share the ride home.</h3>
+          <p>Drivers 18 and over can offer seats home to their friends and family. Pick up at a public spot like the main lot, approve every rider, and sort out the details in chat.</p>
+          <ul><li>Only adult friends and family see your ride, never strangers or kids</li><li>No payments and no home addresses</li><li>“Got home safe” lets one person you choose follow your trip until you check in</li><li>Road condition links and a good-to-drive check before you post</li></ul>
         </div>
         <div class="panel" data-tab="snow">
           <h3>Check the snow. Then send it.</h3>
@@ -245,6 +252,6 @@
     <div>© 2026 Trailline · Not affiliated with any ski resort · Map data © OpenStreetMap contributors · Weather by Open-Meteo</div>
   </div>
 </footer>
-<script src="main.js?v=202611131230" defer></script>
+<script src="main.js?v=202611131249" defer></script>
 </body>
 </html>

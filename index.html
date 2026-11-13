@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trailline: ski & snowboard tracking with your crew</title>
-<meta name="description" content="Trailline draws every run on the resort map as you ride, shows what's open from rider reports, and lets you find your crew on the hill. No ads, no tracking.">
+<meta name="description" content="Trailline draws every run on the resort map as you ride, shows what's open, and helps you find, message and meet up with your crew on the hill. No ads, no tracking.">
 <link rel="canonical" href="https://trytrailline.app/">
 <link rel="icon" href="mark.svg">
 <link rel="apple-touch-icon" href="mark.svg">
 <meta name="theme-color" content="#0a100c">
 <meta property="og:title" content="Trailline: every run, live">
-<meta property="og:description" content="Ski & snowboard tracking with your crew. Runs on the map, rider reports, conditions and your gear.">
+<meta property="og:description" content="Ski & snowboard tracking with your crew. Runs on the map, group chat, rides home and your gear.">
 <meta property="og:image" content="https://trytrailline.app/img/og.jpg">
 <meta property="og:url" content="https://trytrailline.app/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,700..900&display=swap">
-<link rel="stylesheet" href="styles.css?v=202611131258">
+<link rel="stylesheet" href="styles.css?v=202611131318">
 </head>
 <body class="home">
 <script>document.documentElement.classList.add("js")</script>
@@ -48,7 +48,7 @@
     <div class="hero-copy">
       <p class="eyebrow">Ski &amp; snowboard tracker</p>
       <h1 class="display">Every run.<br><span>Live.</span></h1>
-      <p class="lede">Your day draws itself on the resort map as you ride. See what's open, check the snow and find your crew on the hill.</p>
+      <p class="lede">Your day draws itself on the resort map as you ride. See what's open, find your crew on the hill and meet up with one tap.</p>
       <div class="cta">
         <a class="btn" href="#get">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.3 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.4c.7-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z"/></svg>
@@ -82,7 +82,7 @@
         <img class="phone p1 tilt" src="img/map.webp" alt="Trailline map with a recorded run" width="664" height="1430">
         <div class="chip c1"><b>8</b> runs today</div>
         <div class="chip c2"><span class="dot"></span> Maya is on Cornice</div>
-        <div class="chip c3">❄️ 6″ overnight</div>
+        <div class="chip c3">📍 Meet at the bottom</div>
       </div>
     </div>
   </header>
@@ -116,7 +116,7 @@
     </div>
     <div class="demo-phone reveal">
       <div class="bezel">
-        <video id="demo-video" src="img/demo.mp4?v=202611131258" poster="img/demo-poster.webp" muted loop playsinline preload="metadata"
+        <video id="demo-video" src="img/demo.mp4?v=202611131318" poster="img/demo-poster.webp" muted loop playsinline preload="metadata"
           aria-label="Trailline demo: tapping a run, saving a line, finding friends and meeting at a lift"></video>
         <button class="play" type="button" aria-label="Play demo">▶</button>
       </div>
@@ -132,6 +132,7 @@
         <img class="shot active" data-tab="ride" src="img/map.webp" alt="Map with your runs" width="664" height="1430">
         <img class="shot" data-tab="runs" src="img/runs.webp" alt="Runs list" width="664" height="1430" loading="lazy">
         <img class="shot" data-tab="crew" src="img/crew.webp" alt="Crew screen" width="664" height="1430" loading="lazy">
+        <img class="shot" data-tab="chat" src="img/chat.webp" alt="Chat with quick replies and a shared spot you can tap to see on the map" width="664" height="1415" loading="lazy">
         <img class="shot" data-tab="rides" src="img/rides.webp" alt="Offer seats home: pick-up spot, destination town, time and spare seats" width="664" height="1415" loading="lazy">
         <img class="shot" data-tab="snow" src="img/weather.webp" alt="Weather bubble" width="664" height="1430" loading="lazy">
         <img class="shot" data-tab="gear" data-view="wall" src="img/gear-wall.webp" alt="Gear wall: boards hanging, boots and bindings on shelves" width="664" height="1430" loading="lazy">
@@ -145,6 +146,7 @@
         <button role="tab" aria-selected="true" data-tab="ride">Ride</button>
         <button role="tab" aria-selected="false" data-tab="runs">Runs</button>
         <button role="tab" aria-selected="false" data-tab="crew">Crew</button>
+        <button role="tab" aria-selected="false" data-tab="chat">Chat</button>
         <button role="tab" aria-selected="false" data-tab="rides">Rides</button>
         <button role="tab" aria-selected="false" data-tab="snow">Snow</button>
         <button role="tab" aria-selected="false" data-tab="gear">Gear</button>
@@ -162,8 +164,13 @@
         </div>
         <div class="panel" data-tab="crew">
           <h3>Ride together</h3>
-          <p>Add friends with a short code you can shout across a lift line, or a QR. See who's out, where they are and which lift they're heading to. Then chat one-on-one or in a group with your whole crew.</p>
-          <ul><li>Group chats for your crew, with quick replies that work with gloves on</li><li>Send your spot: friends tap it to see exactly where you are on the map</li><li>A notification when your crew messages you</li><li>Optional heads-up when a friend is nearby on the hill</li><li>No email or phone number needed</li><li>Trailline Family for kids in ski school</li></ul>
+          <p>Add friends with a short code you can shout across a lift line, or a QR. See who's out, where they are and which lift they're heading to.</p>
+          <ul><li>Optional heads-up when a friend is nearby, or at the same lift</li><li>Sharing is off until you turn it on</li><li>No email or phone number needed</li><li>Trailline Family for kids in ski school</li></ul>
+        </div>
+        <div class="panel" data-tab="chat">
+          <h3>Meet up with one tap</h3>
+          <p>Message a friend or start a group for your whole crew. Big quick replies work with gloves on, and one bar of signal is enough.</p>
+          <ul><li>📍 Send my spot: friends tap it to see exactly where you are on the map</li><li>“Meet at the bottom”, “One more run?”, “Lunch?” and more</li><li>A notification when your crew messages you</li><li>Messages wait on your phone and send when you get signal</li></ul>
         </div>
         <div class="panel" data-tab="rides">
           <h3>Spare seat? Share the ride home.</h3>
@@ -213,7 +220,7 @@
         <div class="card lift-card">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/></svg></div>
           <h3>Safe for kids</h3>
-          <p>Kids' accounts are made by a parent, visible only to family, and can't be found by strangers.</p>
+          <p>Kids' accounts are made by a parent, visible only to family, and can't be found by strangers. Rides home are 18+ only.</p>
         </div>
         <div class="card lift-card">
           <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="12" rx="3"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></div>
@@ -234,7 +241,7 @@
 <section id="get">
   <div class="wrap get">
     <h2 class="display reveal">Ready for <span>first chair</span>?</h2>
-    <p class="section-lede reveal">Trailline is almost ready for the App Store and Google Play. Questions or ideas in the meantime? We'd love to hear them.</p>
+    <p class="section-lede reveal">Trailline is in beta on iPhone right now. A public beta link is coming soon, then the App Store and Google Play.</p>
     <div class="ticket reveal">
       <div>
         <div class="label">Season pass · Free</div>
@@ -252,6 +259,6 @@
     <div>© 2026 Trailline · Not affiliated with any ski resort · Map data © OpenStreetMap contributors · Weather by Open-Meteo</div>
   </div>
 </footer>
-<script src="main.js?v=202611131258" defer></script>
+<script src="main.js?v=202611131318" defer></script>
 </body>
 </html>

@@ -346,3 +346,33 @@ footer a:hover { color: var(--text); }
 
 .btn small { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: .65; margin-left: 2px; }
 .note .platforms { color: var(--lime); }
+
+/* On your wrist: drawn mockups of the Watch app and the lock screen (no animation). */
+.wrist { display: flex; flex-wrap: wrap; gap: 36px; justify-content: center; align-items: center; margin: 28px 0; }
+.wm { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.wm figcaption { color: var(--muted); font-size: 14px; }
+.lime { color: var(--lime); }
+.watch .face { width: 214px; height: 270px; border-radius: 56px; background: #000; border: 10px solid #2a312d; padding: 20px 18px; overflow: hidden; display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.watch .face > b { font-size: 18px; }
+.nums { display: flex; gap: 14px; }
+.nums span { display: flex; flex-direction: column; font-size: 11px; color: var(--muted); }
+.nums b { font-size: 18px; color: var(--text); font-variant-numeric: tabular-nums; }
+.wbtn { border-radius: 999px; text-align: center; padding: 8px 0; font-weight: 800; }
+.wbtn.stop { background: #e5484d; color: #fff; }
+.wrow { background: #1c2420; border-radius: 12px; padding: 6px 10px; display: flex; flex-direction: column; font-weight: 700; }
+.wrow small { color: var(--muted); font-weight: 400; }
+.lock { width: min(360px, 100%); }
+.la, .note { width: 100%; border-radius: 22px; padding: 14px 16px; }
+.la { background: #0d1510; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+.la-top { display: flex; gap: 8px; font-weight: 800; }
+.la-top em { margin-left: auto; color: var(--lime); font-style: normal; font-size: 13px; }
+.la small { color: var(--muted); }
+.note { background: #1b231e; display: flex; flex-direction: column; gap: 6px; }
+.note-top { display: flex; justify-content: space-between; color: var(--text); }
+.note-top small { color: var(--muted); }
+.note p { margin: 0; }
+.acts { display: flex; flex-wrap: wrap; gap: 6px; }
+.acts span { background: #2a342e; border-radius: 999px; padding: 6px 11px; font-size: 13px; font-weight: 700; }
+.wrist-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.wrist-list li { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px; color: var(--muted); }
+.wrist-list b { color: var(--text); display: block; margin-bottom: 4px; }
